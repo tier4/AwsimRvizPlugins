@@ -1,0 +1,11 @@
+<library path="awsim_rviz_plugins">
+  <class
+    name="awsim_rviz_plugins/SetEgoPose"
+    type="awsim_rviz_plugins::SetEgoPose"
+    base_class_type="rviz_common::Tool"
+  >
+    <description>
+      Set ego pose.
+    </description>
+  </class>
+</library>

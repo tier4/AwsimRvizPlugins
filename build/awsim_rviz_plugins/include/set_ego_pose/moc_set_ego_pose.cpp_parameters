@@ -1,0 +1,5 @@
+-D_BUILD_DIR_PATH="/home/ryookamura3/awsim_rviz_plugin/build/awsim_rviz_plugins"
+-D_SRC_DIR_PATH="/home/ryookamura3/awsim_rviz_plugin/awsim_rviz_plugins"
+-o
+/home/ryookamura3/awsim_rviz_plugin/build/awsim_rviz_plugins/include/set_ego_pose/moc_set_ego_pose.cpp
+/home/ryookamura3/awsim_rviz_plugin/awsim_rviz_plugins/include/set_ego_pose/set_ego_pose.hpp

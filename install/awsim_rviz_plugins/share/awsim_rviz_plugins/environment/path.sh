@@ -1,1 +1,0 @@
-/home/ryookamura3/pilot-auto.x2_v4.0.1/src/ament_cmake/ament_cmake_core/cmake/environment_hooks/environment/path.sh

@@ -1,6 +1,0 @@
-[31mCMake Error at cmake_install.cmake:85 (file):
-  file INSTALL cannot find
-  "/home/ryookamura3/awsim_rviz_plugin/awsim_rviz_plugins/icons": No such
-  file or directory.
-
-[0m

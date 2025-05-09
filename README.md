@@ -4,34 +4,23 @@ Plugins for modify AWSIM emvironments.
 ## Set Ego Pose
 set ego position.
 
+# TODO
+## Update contents
+- README.md
+- LICENSE
+- CmakeLists.txt
+- awsim_rviz_plugins-extras.cmake
+
+## Add
+- test/
+
+## Modify sentences / coding style
+- package.xml
+- plugins_description.xml
+- CHANGELOG.rst
+- set_ego_pose.cpp / .hpp
+
 ## Icon Copyrights
-
-This package contains Public Domain icons downloaded from http://tango.freedesktop.org/releases/.
-
-Upstream Authors (2005-2009):
-
-- Ulisse Perusin `<uli.peru@gmail.com>`
-- Steven Garrity `<sgarrity@silverorange.com>`
-- Lapo Calamandrei `<calamandrei@gmail.com>`
-- Ryan Collier `<rcollier@novell.com>`
-- Rodney Dawes `<dobey@novell.com>`
-- Andreas Nilsson `<nisses.mail@home.se>`
-- Tuomas Kuosmanen `<tigert@tigert.com>`
-- Garrett LeSage `<garrett@novell.com>`
-- Jakub Steiner `<jimmac@novell.com>`
-
-Other icons and graphics contained in this package are released into the
-Public Domain as well.
-
-Authors (2012-2017):
-
-- David Gossow
-- Chad Rockey
-- Kei Okada
-- Julius Kammerl
-- Acorn Pooley
-- Rein Appeldoorn
-
 Copyright notice for all icons and graphics in this package:
 
 ```

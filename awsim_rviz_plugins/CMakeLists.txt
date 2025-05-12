@@ -60,7 +60,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 
 set(awsim_rviz_plugins_headers_to_moc
-  include/set_ego_pose/set_ego_pose.hpp
+  include/ego_placement/ego_placement.hpp
 )
 
 foreach(header "${awsim_rviz_plugins_headers_to_moc}")
@@ -68,7 +68,7 @@ foreach(header "${awsim_rviz_plugins_headers_to_moc}")
 endforeach()
 
 set(awsim_rviz_plugins_source_files
-  src/set_ego_pose/set_ego_pose.cpp
+  src/ego_placement/ego_placement.cpp
 )
 
 add_library(awsim_rviz_plugins SHARED

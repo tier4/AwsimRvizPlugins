@@ -18,7 +18,7 @@ set ego position.
 - package.xml
 - plugins_description.xml
 - CHANGELOG.rst
-- set_ego_pose.cpp / .hpp
+- ego_placement.cpp / .hpp
 
 ## Icon Copyrights
 Copyright notice for all icons and graphics in this package:

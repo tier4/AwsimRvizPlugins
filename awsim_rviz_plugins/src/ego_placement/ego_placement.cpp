@@ -30,7 +30,7 @@
 
 
 #define _USE_MATH_DEFINES
-#include "set_ego_pose/set_ego_pose.hpp"
+#include "ego_placement/ego_placement.hpp"
 
 #include <string>
 
@@ -44,13 +44,13 @@
 
 namespace awsim_rviz_plugins
 {
-SetEgoPose::SetEgoPose()
+EgoPlacement::EgoPlacement()
 : qos_profile_(5)
 {
   shortcut_key_ = 'p';
 
   topic_property_ = new rviz_common::properties::StringProperty(
-    "Topic", "/awsim/awsim_rviz_plugin/ego_pose",
+    "Topic", "/awsim/awsim_rviz_plugin/ego_placement/pose_with_covariance",
     "The topic on which to publish initial pose estimates.",
     getPropertyContainer(), SLOT(updateTopic()), this);
 
@@ -68,18 +68,18 @@ SetEgoPose::SetEgoPose()
     "Covariance on the yaw-axis.", getPropertyContainer(), 0, this);
 }
 
-SetEgoPose::~SetEgoPose() = default;
+EgoPlacement::~EgoPlacement() = default;
 
-void SetEgoPose::onInitialize()
+void EgoPlacement::onInitialize()
 {
   PoseTool::onInitialize();
   qos_profile_property_->initialize(
     [this](rclcpp::QoS profile) {this->qos_profile_ = profile;});
-  setName("AWSIM EGO Pose");
+  setName("AWSIM EGO Placement");
   updateTopic();
 }
 
-void SetEgoPose::updateTopic()
+void EgoPlacement::updateTopic()
 {
   // TODO(anhosi, wjwwood): replace with abstraction for publishers once available
   rclcpp::Node::SharedPtr raw_node =
@@ -90,7 +90,7 @@ void SetEgoPose::updateTopic()
   clock_ = raw_node->get_clock();
 }
 
-void SetEgoPose::onPoseSet(double x, double y, double theta)
+void EgoPlacement::onPoseSet(double x, double y, double theta)
 {
   std::string fixed_frame = context_->getFixedFrame().toStdString();
 
@@ -115,4 +115,4 @@ void SetEgoPose::onPoseSet(double x, double y, double theta)
 }  // namespace awsim_rviz_plugins
 
 #include <pluginlib/class_list_macros.hpp>  // NOLINT
-PLUGINLIB_EXPORT_CLASS(awsim_rviz_plugins::SetEgoPose, rviz_common::Tool)
+PLUGINLIB_EXPORT_CLASS(awsim_rviz_plugins::EgoPlacement, rviz_common::Tool)

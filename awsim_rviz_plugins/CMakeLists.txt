@@ -21,28 +21,6 @@ if(DEFINED ENV{DISPLAY})
   set(DISPLAYPRESENT TRUE)
 endif()
 
-if(APPLE OR DISPLAYPRESENT OR EnableDisplayTests STREQUAL "True")
-  message(STATUS "Enabling tests requiring a display")
-else()
-  set(SKIP_DISPLAY_TESTS "SKIP_TEST")
-endif()
-
-# options and directories for visual tests (see visual_testing_framework documentation)
-option(EnableVisualTests "decides whether or not to enable the tests")
-
-add_definitions(-D_BUILD_DIR_PATH="${CMAKE_CURRENT_BINARY_DIR}")
-add_definitions(-D_SRC_DIR_PATH="${CMAKE_CURRENT_SOURCE_DIR}")
-
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/test_images)
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/test/reference_images)
-
-# Run visual tests only if "EnableVisualTests=True"
-if(EnableVisualTests STREQUAL "True")
-  message(STATUS "Enabling visual tests")
-else()
-  set(SKIP_VISUAL_TESTS "SKIP_TEST")
-endif()
-
 if(MSVC)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
 endif()

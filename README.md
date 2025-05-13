@@ -50,6 +50,4 @@ source install/setup.sh
 - awsim_rviz_plugins-extras.cmake
 
 ### Modify sentences / coding style
-- plugins_description.xml
-- CHANGELOG.rst
 - ego_placement.cpp / .hpp

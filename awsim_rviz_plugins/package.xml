@@ -6,19 +6,18 @@
   <name>awsim_rviz_plugins</name>
   <version>1.0.0</version>
   <description>
-    Plugins for modify AWSIM emvironments.
+    Rviz plugin for operating AWSIM environment.
   </description>
 
   <maintainer email="ryo.okamura.3@tier4.jp">Ryo OKAMURA</maintainer>
 
   <license>BSD</license>
 
-  <!-- <url type="website">https://github.com/ros2/rviz/blob/ros2/README.md</url> -->
-  <!-- <url type="repository">https://github.com/ros2/rviz</url> -->
-  <!-- <url type="bugtracker">https://github.com/ros2/rviz/issues</url> -->
+  <url type="website">https://github.com/tier4/AwsimRvizPlugins</url>
+  <url type="repository">https://github.com/tier4/AwsimRvizPlugins</url>
+  <url type="bugtracker">https://github.com/tier4/AwsimRvizPlugins/issues</url>
 
-  <author>Ryo OKAMURA</author>
-  <author email="ryo.okamura.3@tier4.jp">Jacob Perron</author>
+  <author email="ryo.okamura.3@tier4.jp">Ryo OKAMURA</author>
 
   <depend>geometry_msgs</depend>
   <depend>rclcpp</depend>

@@ -39,6 +39,7 @@ find_package(rclcpp REQUIRED)
 
 set(awsim_rviz_plugins_headers_to_moc
   include/ego_placement/ego_placement.hpp
+  include/npc_spawner/npc_spawner.hpp
 )
 
 foreach(header "${awsim_rviz_plugins_headers_to_moc}")
@@ -47,6 +48,7 @@ endforeach()
 
 set(awsim_rviz_plugins_source_files
   src/ego_placement/ego_placement.cpp
+  src/npc_spawner/npc_spawner.cpp
 )
 
 add_library(awsim_rviz_plugins SHARED

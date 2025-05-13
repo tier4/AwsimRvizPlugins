@@ -8,4 +8,14 @@
       Set ego pose.
     </description>
   </class>
+
+  <class
+    name="awsim_rviz_plugins/NpcSpawner"
+    type="awsim_rviz_plugins::NpcSpawner"
+    base_class_type="rviz_common::Tool"
+  >
+    <description>
+      Set ego pose.
+    </description>
+  </class>
 </library>

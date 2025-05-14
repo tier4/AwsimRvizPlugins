@@ -43,6 +43,18 @@ source install/setup.sh
 # ros2 launch ...
 ```
 
+### Install with Autoware (pilot-auto)
+1. clone Autoware repository
+2. add description of AwsimRvizPlugins to autoware.repos
+```
+repositories:
+  # please add the following statement to autoware.repos to use AwsimRvizPlugins
+  simulator/awsim_rviz_plugins:
+    type: git
+    url: git@github.com:tier4/AwsimRvizPlugins.git
+```
+3. Introduce `Autoware (pilot-auto)` according to [Autoware Documentation](https://autowarefoundation.github.io/autoware-documentation/main/installation/autoware/source-installation/).
+
 ## TODO
 ### Update contents
 - LICENSE

@@ -1,63 +1,65 @@
 # AwsimRvizPlugins
-Plugins for modify AWSIM emvironments.
+Rviz plugin for operating AWSIM environment.
 
-## Set Ego Pose
-set ego position.
+The following features are implemented:
+- EgoPlacement: Set AWSIM EGO pose from Rviz GUI tool
 
-# TODO
-## Update contents
-- README.md
+## Features
+
+### EgoPlacement
+Set AWSIM EGO pose from Rviz GUI tool.
+
+`rviz_common::Tool` named `awsim_rviz_plugins::EgoPlacement` is implemented.
+`awsim_rviz_plugins::EgoPlacement` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugin/ego_placement/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
+
+AWSIM subscribes this topic and updates the coordinates of the EGO.
+
+#### How to use
+1. Click the plus button on the toolbar and select `awsim_rviz_plugins/EgoPlacement` from the list.
+2. Click on `AWSIM EGO Placement` button from the toolbar and select it.
+3. On the map displayed in Rviz, drag the cursor to the location and orientation where you want to move the EGO.
+
+If `pilot-auto` is running with, press the `Initialize with GNSS` button to perform localilization again.
+
+## Installation
+### Install only this plugins to Rviz
+1. clone this repository
+```
+git clone git@github.com:tier4/AwsimRvizPlugins.git
+```
+2. build package
+```
+cd AwsimRvizPlugins
+colcon build
+```
+3. source package
+You must `source` each time you launch a terminal.
+```
+source install/setup.sh
+```
+4. launch Rviz and use tools
+```
+# rviz2
+# ros2 launch ...
+```
+
+### Install with Autoware (pilot-auto)
+1. clone Autoware repository
+2. add description of AwsimRvizPlugins to autoware.repos
+```
+repositories:
+  # please add the following statement to autoware.repos to use AwsimRvizPlugins
+  simulator/awsim_rviz_plugins:
+    type: git
+    url: git@github.com:tier4/AwsimRvizPlugins.git
+```
+3. Introduce `Autoware (pilot-auto)` according to [Autoware Documentation](https://autowarefoundation.github.io/autoware-documentation/main/installation/autoware/source-installation/).
+
+## TODO
+### Update contents
 - LICENSE
 - CmakeLists.txt
 - awsim_rviz_plugins-extras.cmake
 
-## Add
-- test/
-
-## Modify sentences / coding style
-- package.xml
-- plugins_description.xml
-- CHANGELOG.rst
+### Modify sentences / coding style
 - ego_placement.cpp / .hpp
-
-## Icon Copyrights
-Copyright notice for all icons and graphics in this package:
-
-```
-Public Domain Dedication
-
-Copyright-Only Dedication (based on United States law) or Public Domain
-Certification
-
-The person or persons who have associated work with this document (the
-"Dedicator" or "Certifier") hereby either (a) certifies that, to the best
-of his knowledge, the work of authorship identified is in the public
-domain of the country from which the work is published, or (b)
-hereby dedicates whatever copyright the dedicators holds in the work
-of authorship identified below (the "Work") to the public domain. A
-certifier, moreover, dedicates any copyright interest he may have in
-the associated work, and for these purposes, is described as a
-"dedicator" below.
-
-A certifier has taken reasonable steps to verify the copyright
-status of this work. Certifier recognizes that his good faith efforts
-may not shield him from liability if in fact the work certified is not
-in the public domain.
-
-Dedicator makes this dedication for the benefit of the public at
-large and to the detriment of the Dedicator's heirs and successors.
-Dedicator intends this dedication to be an overt act of relinquishment
-in perpetuity of all present and future rights under copyright law,
-whether vested or contingent, in the Work. Dedicator understands that
-such relinquishment of all rights includes the relinquishment of all
-rights to enforce (by lawsuit or otherwise) those copyrights in the
-Work.
-
-Dedicator recognizes that, once placed in the public domain, the Work
-may be freely reproduced, distributed, transmitted, used, modified,
-built upon, or otherwise exploited by anyone for any purpose, commercial
-or non-commercial, and in any way, including by methods that have not
-yet been invented or conceived.
-```
-
-Source: http://creativecommons.org/licenses/publicdomain/

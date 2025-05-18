@@ -32,6 +32,8 @@
 
 #include <memory>
 
+#include <std_msgs/msg/string.hpp>
+#include <std_msgs/msg/float32.hpp>
 #include "rclcpp/qos.hpp"
 
 #include "geometry_msgs/msg/pose_stamped.hpp"
@@ -82,8 +84,14 @@ private:
 
   rviz_common::ros_integration::RosNodeAbstractionIface::WeakPtr rviz_ros_node_;
   rclcpp::QoS qos_profile;
-  rviz_common::properties::RosTopicProperty * topic_property_;
-  rviz_common::properties::QosProfileProperty * qos_profile_property_;
+  rviz_common::properties::RosTopicProperty * topic_property_name;
+  rviz_common::properties::RosTopicProperty * topic_property_velo;
+  rviz_common::properties::QosProfileProperty * qos_profile_property_name;
+  rviz_common::properties::QosProfileProperty * qos_profile_property_velo;
+
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_name;
+  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr publisher_velo;
+  rclcpp::Clock::SharedPtr clock_;
 };
 }  // namespace rviz_default_plugins
 

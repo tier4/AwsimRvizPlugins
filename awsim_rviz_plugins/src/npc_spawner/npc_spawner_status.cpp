@@ -47,11 +47,15 @@ namespace awsim_rviz_plugins
 
 NpcSpawnerStatus::NpcSpawnerStatus() : rviz_ros_node_(), qos_profile(5)
 {
-  topic_property_ = new rviz_common::properties::RosTopicProperty(
-    "Topic", "/awsim/awsim_rviz_plugin/npc_spawner/status",
-    "autoware_vehicle_msgs/msg/VelocityReport", "topic name", this, SLOT(updateTopic()));
+  topic_property_name = new rviz_common::properties::RosTopicProperty(
+    "Topic", "/awsim/awsim_rviz_plugin/npc_spawner/npc_name",
+    "std_msgs::msg::String", "topic name", this, SLOT(updateTopic()));
+  topic_property_velo = new rviz_common::properties::RosTopicProperty(
+    "Topic", "/awsim/awsim_rviz_plugin/npc_spawner/npc_velocity",
+    "std_msgs::msg::Float32", "topic name", this, SLOT(updateTopic()));
 
-  qos_profile_property_ = new rviz_common::properties::QosProfileProperty(topic_property_, qos_profile);
+  qos_profile_property_name = new rviz_common::properties::QosProfileProperty(topic_property_name, qos_profile);
+  qos_profile_property_velo = new rviz_common::properties::QosProfileProperty(topic_property_velo, qos_profile);
 
   shape_property_ = new rviz_common::properties::EditableEnumProperty(
     "NPC Type", "Hatchback", "Type of NPC which spawn to AWSIM.", this, SLOT(updateStatus()));
@@ -69,7 +73,9 @@ NpcSpawnerStatus::NpcSpawnerStatus() : rviz_ros_node_(), qos_profile(5)
 void NpcSpawnerStatus::onInitialize()
 {
   rviz_ros_node_ = context_->getRosNodeAbstraction();
-  topic_property_->initialize(rviz_ros_node_);
+  topic_property_name->initialize(rviz_ros_node_);
+  topic_property_velo->initialize(rviz_ros_node_);
+  updateTopic();
 }
 
 void NpcSpawnerStatus::reset()
@@ -91,12 +97,21 @@ void NpcSpawnerStatus::onDisable()
 
 void NpcSpawnerStatus::updateTopic()
 {
-
+  rclcpp::Node::SharedPtr raw_node = context_->getRosNodeAbstraction().lock()->get_raw_node();
+  publisher_name = raw_node->template create_publisher<std_msgs::msg::String>(topic_property_name->getStdString(), qos_profile);
+  publisher_velo = raw_node->template create_publisher<std_msgs::msg::Float32>(topic_property_velo->getStdString(), qos_profile);
+  clock_ = raw_node->get_clock();
 }
 
 void NpcSpawnerStatus::updateStatus()
 {
+  std_msgs::msg::String name;
+  name.data = shape_property_->getStdString();
+  std_msgs::msg::Float32 velocity;
+  velocity.data = shaft_length_property_->getFloat();
 
+  publisher_name->publish(name);
+  publisher_velo->publish(velocity);
 }
 }  // namespace rviz_default_plugins
 

@@ -81,8 +81,8 @@ private Q_SLOTS:
   void updateVelocityTopic();
 
 private:
-  rviz_common::properties::EditableEnumProperty * shape_property_;
-  rviz_common::properties::FloatProperty * shaft_length_property_;
+  rviz_common::properties::EditableEnumProperty * type_property_;
+  rviz_common::properties::FloatProperty * velocity_property_;
 
   rviz_common::ros_integration::RosNodeAbstractionIface::WeakPtr rviz_ros_node_;
   rclcpp::QoS qos_profile;

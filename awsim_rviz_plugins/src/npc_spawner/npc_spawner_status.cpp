@@ -57,15 +57,15 @@ NpcSpawnerStatus::NpcSpawnerStatus() : rviz_ros_node_(), qos_profile(5)
   qos_profile_property_name = new rviz_common::properties::QosProfileProperty(topic_property_name, qos_profile);
   qos_profile_property_velo = new rviz_common::properties::QosProfileProperty(topic_property_velo, qos_profile);
 
-  shape_property_ = new rviz_common::properties::EditableEnumProperty(
+  type_property_ = new rviz_common::properties::EditableEnumProperty(
     "NPC Type", "Hatchback", "Type of NPC which spawn to AWSIM.", this, SLOT(updateName()));
-  shape_property_->addOption("Hatchback");
-  shape_property_->addOption("SmallCar");
-  shape_property_->addOption("Taxi");
-  shape_property_->addOption("Truck_2t");
-  shape_property_->addOption("Van");
+  type_property_->addOption("Hatchback");
+  type_property_->addOption("SmallCar");
+  type_property_->addOption("Taxi");
+  type_property_->addOption("Truck_2t");
+  type_property_->addOption("Van");
 
-  shaft_length_property_ = new rviz_common::properties::FloatProperty(
+  velocity_property_ = new rviz_common::properties::FloatProperty(
     "Velocity [km/h]", 1, "Velocity of NPC which spawn to AWSIM.",
     this, SLOT(updateVelocity()));
 }
@@ -79,27 +79,18 @@ void NpcSpawnerStatus::onInitialize()
   updateVelocityTopic();
 }
 
-void NpcSpawnerStatus::reset()
-{
-
-}
+void NpcSpawnerStatus::reset() {};
 
 NpcSpawnerStatus::~NpcSpawnerStatus() = default;
 
-void NpcSpawnerStatus::onEnable()
-{
-  
-}
+void NpcSpawnerStatus::onEnable() {};
 
-void NpcSpawnerStatus::onDisable()
-{
-  
-}
+void NpcSpawnerStatus::onDisable() {};
 
 void NpcSpawnerStatus::updateName()
 {
   std_msgs::msg::String name;
-  name.data = shape_property_->getStdString();
+  name.data = type_property_->getStdString();
 
   publisher_name->publish(name);
 }
@@ -107,7 +98,7 @@ void NpcSpawnerStatus::updateName()
 void NpcSpawnerStatus::updateVelocity()
 {
   std_msgs::msg::Float32 velocity;
-  velocity.data = shaft_length_property_->getFloat();
+  velocity.data = velocity_property_->getFloat();
 
   publisher_velo->publish(velocity);
 }

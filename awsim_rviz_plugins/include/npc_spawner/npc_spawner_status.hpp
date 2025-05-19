@@ -75,8 +75,10 @@ protected:
   void onDisable() override;
 
 private Q_SLOTS:
-  void updateStatus();
-  void updateTopic();
+  void updateName();
+  void updateVelocity();
+  void updateNameTopic();
+  void updateVelocityTopic();
 
 private:
   rviz_common::properties::EditableEnumProperty * shape_property_;

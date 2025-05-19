@@ -47,8 +47,6 @@ namespace awsim_rviz_plugins
 NpcSpawner::NpcSpawner()
 : qos_profile_(5)
 {
-  shortcut_key_ = 'p';
-
   topic_property_ = new rviz_common::properties::StringProperty(
     "Topic", "/awsim/awsim_rviz_plugin/npc_spawner/pose_with_covariance",
     "The topic on which to publish initial pose estimates.",
@@ -81,7 +79,6 @@ void NpcSpawner::onInitialize()
 
 void NpcSpawner::updateTopic()
 {
-  // TODO(anhosi, wjwwood): replace with abstraction for publishers once available
   rclcpp::Node::SharedPtr raw_node =
     context_->getRosNodeAbstraction().lock()->get_raw_node();
   publisher_ = raw_node->

@@ -59,7 +59,3 @@ repositories:
 ### Update contents
 - LICENSE
 - CmakeLists.txt
-- awsim_rviz_plugins-extras.cmake
-
-### Modify sentences / coding style
-- ego_placement.cpp / .hpp

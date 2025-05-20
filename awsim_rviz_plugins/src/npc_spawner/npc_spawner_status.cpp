@@ -66,7 +66,7 @@ NpcSpawnerStatus::NpcSpawnerStatus() : rviz_ros_node_(), qos_profile(5)
   type_property_->addOption("Van");
 
   velocity_property_ = new rviz_common::properties::FloatProperty(
-    "Velocity [km/h]", 1, "Velocity of NPC which spawn to AWSIM.",
+    "Velocity [km/h]", 10, "Velocity of NPC which spawn to AWSIM.",
     this, SLOT(updateVelocity()));
 }
 

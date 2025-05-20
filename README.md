@@ -9,8 +9,8 @@ The following features are implemented:
 ### EgoPlacement
 Set AWSIM EGO pose from Rviz GUI tool.
 
-`rviz_common::Tool` named `awsim_rviz_plugins::EgoPlacement` is implemented.
-`awsim_rviz_plugins::EgoPlacement` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugin/ego_placement/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
+`rviz_common::Tool` named `awsim_rviz_plugins/EgoPlacement` is implemented.
+`awsim_rviz_plugins/EgoPlacement` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugin/ego_placement/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
 
 AWSIM subscribes this topic and updates the coordinates of the EGO.
 

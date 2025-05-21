@@ -106,14 +106,14 @@ void NpcSpawnerStatus::updateVelocity()
 void NpcSpawnerStatus::updateNameTopic()
 {
   rclcpp::Node::SharedPtr raw_node = context_->getRosNodeAbstraction().lock()->get_raw_node();
-  publisher_name = raw_node->template create_publisher<std_msgs::msg::String>(topic_property_name->getStdString(), qos_profile);
+  publisher_name = raw_node->template create_publisher<std_msgs::msg::String>(topic_property_name->getStdString(), qos_profile.reliable().transient_local());
   clock_ = raw_node->get_clock();
 }
 
 void NpcSpawnerStatus::updateVelocityTopic()
 {
   rclcpp::Node::SharedPtr raw_node = context_->getRosNodeAbstraction().lock()->get_raw_node();
-  publisher_velo = raw_node->template create_publisher<std_msgs::msg::Float32>(topic_property_velo->getStdString(), qos_profile);
+  publisher_velo = raw_node->template create_publisher<std_msgs::msg::Float32>(topic_property_velo->getStdString(), qos_profile.reliable().transient_local());
   clock_ = raw_node->get_clock();
 }
 }  // namespace rviz_default_plugins

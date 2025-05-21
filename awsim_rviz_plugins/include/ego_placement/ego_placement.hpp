@@ -50,7 +50,7 @@ class QosProfileProperty;
 
 namespace awsim_rviz_plugins
 {
-class RVIZ_DEFAULT_PLUGINS_PUBLIC EgoPlacement : public rviz_default_plugins::tools::PoseTool
+class EgoPlacement : public rviz_default_plugins::tools::PoseTool
 {
   Q_OBJECT
 

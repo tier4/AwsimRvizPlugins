@@ -2,20 +2,20 @@
 Rviz plugin for operating AWSIM environment.
 
 The following features are implemented:
-- EgoPlacement: Set AWSIM EGO pose from Rviz GUI tool
+- PoseTeleport: Set AWSIM EGO pose from Rviz GUI tool
 
 ## Features
 
-### EgoPlacement
+### PoseTeleport
 Set AWSIM EGO pose from Rviz GUI tool.
 
-`rviz_common::Tool` named `awsim_rviz_plugins/EgoPlacement` is implemented.
-`awsim_rviz_plugins/EgoPlacement` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugin/ego_placement/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
+`rviz_common::Tool` named `awsim_rviz_plugins/2dPoseTeleport` is implemented.
+`awsim_rviz_plugins/2dPoseTeleport` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugin/2d_pose_teleport/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
 
 AWSIM subscribes this topic and updates the coordinates of the EGO.
 
 #### How to use
-1. Click the plus button on the toolbar and select `awsim_rviz_plugins/EgoPlacement` from the list.
+1. Click the plus button on the toolbar and select `awsim_rviz_plugins/2dPoseTeleport` from the list.
 2. Click on `AWSIM EGO Placement` button from the toolbar and select it.
 3. On the map displayed in Rviz, drag the cursor to the location and orientation where you want to move the EGO.
 

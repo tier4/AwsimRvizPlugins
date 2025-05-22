@@ -30,7 +30,7 @@
 
 
 #define _USE_MATH_DEFINES
-#include "ego_placement/ego_placement.hpp"
+#include "2d_pose_teleport/2d_pose_teleport.hpp"
 
 #include <string>
 
@@ -44,11 +44,11 @@
 
 namespace awsim_rviz_plugins
 {
-EgoPlacement::EgoPlacement()
+PoseTeleport::PoseTeleport()
 : qos_profile_(5)
 {
   topic_property_ = new rviz_common::properties::StringProperty(
-    "Topic", "/awsim/awsim_rviz_plugin/ego_placement/pose_with_covariance",
+    "Topic", "/awsim/awsim_rviz_plugin/pose_teleport/pose_with_covariance",
     "The topic on which to publish initial pose estimates.",
     getPropertyContainer(), SLOT(updateTopic()), this);
 
@@ -66,18 +66,18 @@ EgoPlacement::EgoPlacement()
     "Covariance on the yaw-axis.", getPropertyContainer(), 0, this);
 }
 
-EgoPlacement::~EgoPlacement() = default;
+PoseTeleport::~PoseTeleport() = default;
 
-void EgoPlacement::onInitialize()
+void PoseTeleport::onInitialize()
 {
   PoseTool::onInitialize();
   qos_profile_property_->initialize(
     [this](rclcpp::QoS profile) {this->qos_profile_ = profile;});
-  setName("AWSIM EGO Placement");
+  setName("2D Pose Teleport");
   updateTopic();
 }
 
-void EgoPlacement::updateTopic()
+void PoseTeleport::updateTopic()
 {
   rclcpp::Node::SharedPtr raw_node =
     context_->getRosNodeAbstraction().lock()->get_raw_node();
@@ -87,7 +87,7 @@ void EgoPlacement::updateTopic()
   clock_ = raw_node->get_clock();
 }
 
-void EgoPlacement::onPoseSet(double x, double y, double theta)
+void PoseTeleport::onPoseSet(double x, double y, double theta)
 {
   std::string fixed_frame = context_->getFixedFrame().toStdString();
 
@@ -112,4 +112,4 @@ void EgoPlacement::onPoseSet(double x, double y, double theta)
 }  // namespace awsim_rviz_plugins
 
 #include <pluginlib/class_list_macros.hpp>  // NOLINT
-PLUGINLIB_EXPORT_CLASS(awsim_rviz_plugins::EgoPlacement, rviz_common::Tool)
+PLUGINLIB_EXPORT_CLASS(awsim_rviz_plugins::PoseTeleport, rviz_common::Tool)

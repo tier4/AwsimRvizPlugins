@@ -50,14 +50,14 @@ class QosProfileProperty;
 
 namespace awsim_rviz_plugins
 {
-class EgoPlacement : public rviz_default_plugins::tools::PoseTool
+class PoseTeleport : public rviz_default_plugins::tools::PoseTool
 {
   Q_OBJECT
 
 public:
-  EgoPlacement();
+  PoseTeleport();
 
-  ~EgoPlacement() override;
+  ~PoseTeleport() override;
 
   void onInitialize() override;
 

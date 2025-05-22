@@ -17,7 +17,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 
 set(awsim_rviz_plugins_headers_to_moc
-  include/ego_placement/ego_placement.hpp
+  include/2d_pose_teleport/2d_pose_teleport.hpp
 )
 
 foreach(header "${awsim_rviz_plugins_headers_to_moc}")
@@ -25,7 +25,7 @@ foreach(header "${awsim_rviz_plugins_headers_to_moc}")
 endforeach()
 
 set(awsim_rviz_plugins_source_files
-  src/ego_placement/ego_placement.cpp
+  src/2d_pose_teleport/2d_pose_teleport.cpp
 )
 
 add_library(awsim_rviz_plugins SHARED

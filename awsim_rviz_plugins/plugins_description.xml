@@ -1,7 +1,7 @@
 <library path="awsim_rviz_plugins">
   <class
-    name="awsim_rviz_plugins/EgoPlacement"
-    type="awsim_rviz_plugins::EgoPlacement"
+    name="awsim_rviz_plugins/2dPoseTeleport"
+    type="awsim_rviz_plugins::PoseTeleport"
     base_class_type="rviz_common::Tool"
   >
     <description>

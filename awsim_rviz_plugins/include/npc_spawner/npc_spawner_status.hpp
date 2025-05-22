@@ -27,9 +27,6 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-#ifndef RVIZ_DEFAULT_PLUGINS__DISPLAYS__POSE__POSE_DISPLAY_HPP_
-#define RVIZ_DEFAULT_PLUGINS__DISPLAYS__POSE__POSE_DISPLAY_HPP_
-
 #include <memory>
 
 #include <std_msgs/msg/string.hpp>
@@ -56,8 +53,7 @@ class FloatProperty;
 
 namespace awsim_rviz_plugins
 {
-/** @brief Accumulates and displays the pose from a geometry_msgs::PoseStamped message. */
-class RVIZ_DEFAULT_PLUGINS_PUBLIC NpcSpawnerStatus : public
+class NpcSpawnerStatus : public
   rviz_common::Display
 {
   Q_OBJECT
@@ -70,7 +66,6 @@ public:
   void reset() override;
 
 protected:
-  /** @brief Overridden from MessageFilterDisplay to get arrow/axes visibility correct. */
   void onEnable() override;
   void onDisable() override;
 
@@ -95,6 +90,4 @@ private:
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr publisher_velo;
   rclcpp::Clock::SharedPtr clock_;
 };
-}  // namespace rviz_default_plugins
-
-#endif  // RVIZ_DEFAULT_PLUGINS__DISPLAYS__POSE__POSE_DISPLAY_HPP_
+}  // namespace awsim_rviz_plugins

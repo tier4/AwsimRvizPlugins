@@ -50,7 +50,7 @@ class QosProfileProperty;
 
 namespace awsim_rviz_plugins
 {
-class RVIZ_DEFAULT_PLUGINS_PUBLIC NpcSpawner : public rviz_default_plugins::tools::PoseTool
+class NpcSpawner : public rviz_default_plugins::tools::PoseTool
 {
   Q_OBJECT
 

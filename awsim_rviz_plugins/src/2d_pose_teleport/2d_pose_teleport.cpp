@@ -31,7 +31,7 @@ PoseTeleport::PoseTeleport()
 : qos_profile_(5)
 {
   topic_property_ = new rviz_common::properties::StringProperty(
-    "Topic", "/awsim/awsim_rviz_plugin/pose_teleport/pose_with_covariance",
+    "Topic", "/awsim/awsim_rviz_plugins/pose_teleport/pose_with_covariance",
     "The topic on which to publish initial pose estimates.",
     getPropertyContainer(), SLOT(updateTopic()), this);
 

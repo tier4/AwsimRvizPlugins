@@ -6,7 +6,7 @@
   <name>awsim_rviz_plugins</name>
   <version>1.0.1</version>
   <description>
-    Rviz plugin for operating AWSIM environment.
+    Rviz plugins for operating AWSIM environment.
   </description>
 
   <maintainer email="ryo.okamura.3@tier4.jp">Ryo OKAMURA</maintainer>

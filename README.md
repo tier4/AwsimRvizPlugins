@@ -1,5 +1,5 @@
 # AwsimRvizPlugins
-Rviz plugin for operating AWSIM environment.
+Rviz plugins for operating AWSIM environment.
 
 The following features are implemented:
 - 2dPoseTeleport: Teleport AWSIM EGO pose from Rviz GUI tool
@@ -10,7 +10,7 @@ The following features are implemented:
 Set AWSIM EGO pose from Rviz GUI tool.
 
 `rviz_common::Tool` named `awsim_rviz_plugins/2dPoseTeleport` is implemented.
-`awsim_rviz_plugins/2dPoseTeleport` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugin/pose_teleport/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
+`awsim_rviz_plugins/2dPoseTeleport` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugins/pose_teleport/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
 
 AWSIM subscribes this topic and updates the coordinates of the EGO.
 

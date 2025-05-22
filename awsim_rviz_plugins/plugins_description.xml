@@ -15,7 +15,7 @@
     base_class_type="rviz_common::Tool"
   >
     <description>
-      Set ego pose.
+      Spawn AWSIM NPC from Rviz tool.
     </description>
   </class>
 
@@ -25,8 +25,9 @@
     base_class_type="rviz_common::Display"
   >
     <description>
-      Displays a geometry_msgs::PoseStamped message.  &lt;a href="http://www.ros.org/wiki/rviz/DisplayTypes/Pose"&gt;More Information&lt;/a&gt;.
+      Modify NPC status which is spawned from `awsim_rviz_plugins/NpcSpawner`.
     </description>
-    <message_type>geometry_msgs/msg/PoseStamped</message_type>
+    <message_type>std_msgs/msg/String</message_type>
+    <message_type>std_msgs/msg/Float32</message_type>
   </class>
 </library>

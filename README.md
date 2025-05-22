@@ -54,8 +54,3 @@ repositories:
     url: git@github.com:tier4/AwsimRvizPlugins.git
 ```
 3. Introduce `Autoware (pilot-auto)` according to [Autoware Documentation](https://autowarefoundation.github.io/autoware-documentation/main/installation/autoware/source-installation/).
-
-## TODO
-### Update contents
-- LICENSE
-- CmakeLists.txt

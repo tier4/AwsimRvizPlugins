@@ -8,27 +8,6 @@ if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD_REQUIRED ON)
 endif()
 
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic -Wnon-virtual-dtor -Woverloaded-virtual)
-endif()
-
-# Tests currently only run on OS X @ OSRF jenkins
-# Enable on Linux by providing a display, enable on Windows via EnableDisplayTests=True
-option(EnableDisplayTests "EnableDisplayTests")
-set(DisplayTests "False" CACHE STRING "DisplayTestsVariable")
-
-if(DEFINED ENV{DISPLAY})
-  set(DISPLAYPRESENT TRUE)
-endif()
-
-if(MSVC)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
-endif()
-
-# We specifically don't turn on CMAKE_AUTOMOC, since it generates one huge
-# mocs_compilation.cpp file that takes a lot of memory to compile.  Instead
-# we create individual moc files that can be compiled separately.
-
 find_package(rviz_common REQUIRED)
 find_package(rviz_rendering REQUIRED)
 find_package(rviz_default_plugins REQUIRED)
@@ -71,8 +50,7 @@ target_link_libraries(awsim_rviz_plugins PUBLIC
   rviz_default_plugins::rviz_default_plugins
 )
 
-# Causes the visibility macros to use dllexport rather than dllimport,
-# which is appropriate when building the dll but not consuming it.
+# Causes the visibility macros to use dllexport rather than dllimport, which is appropriate when building the dll but not consuming it.
 target_compile_definitions(awsim_rviz_plugins PRIVATE "awsim_rviz_plugins_BUILDING_LIBRARY")
 
 pluginlib_export_plugin_description_file(rviz_common plugins_description.xml)

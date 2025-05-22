@@ -64,6 +64,8 @@ NpcSpawnerStatus::NpcSpawnerStatus() : rviz_ros_node_(), qos_profile(5)
   type_property_->addOption("Taxi");
   type_property_->addOption("Truck_2t");
   type_property_->addOption("Van");
+  type_property_->addOption("humanCasual");
+  type_property_->addOption("humanElegant");
 
   velocity_property_ = new rviz_common::properties::FloatProperty(
     "Velocity [km/h]", 10, "Velocity of NPC which spawn to AWSIM.",

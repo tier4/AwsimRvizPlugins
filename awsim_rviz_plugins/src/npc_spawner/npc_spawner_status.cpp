@@ -48,10 +48,10 @@ namespace awsim_rviz_plugins
 NpcSpawnerStatus::NpcSpawnerStatus() : rviz_ros_node_(), qos_profile(5)
 {
   topic_property_name = new rviz_common::properties::RosTopicProperty(
-    "Topic (NPC Type)", "/awsim/awsim_rviz_plugin/npc_spawner/npc_name",
+    "Topic (NPC Type)", "/awsim/awsim_rviz_plugins/npc_spawner/npc_name",
     "std_msgs::msg::String", "topic name", this, SLOT(updateNameTopic()));
   topic_property_velo = new rviz_common::properties::RosTopicProperty(
-    "Topic (Velocity)", "/awsim/awsim_rviz_plugin/npc_spawner/npc_velocity",
+    "Topic (Velocity)", "/awsim/awsim_rviz_plugins/npc_spawner/npc_velocity",
     "std_msgs::msg::Float32", "topic name", this, SLOT(updateVelocityTopic()));
 
   qos_profile_property_name = new rviz_common::properties::QosProfileProperty(topic_property_name, qos_profile);

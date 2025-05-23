@@ -48,7 +48,7 @@ NpcSpawner::NpcSpawner()
 : qos_profile_(5)
 {
   topic_property_ = new rviz_common::properties::StringProperty(
-    "Topic", "/awsim/awsim_rviz_plugin/npc_spawner/pose_with_covariance",
+    "Topic", "/awsim/awsim_rviz_plugins/npc_spawner/pose_with_covariance",
     "The topic on which to publish initial pose estimates.",
     getPropertyContainer(), SLOT(updateTopic()), this);
 

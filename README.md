@@ -27,12 +27,12 @@ Spawn AWSIM Npc from Rviz GUI tool.
 Type and velocity of spawned Npc is specified from Rviz display.
 
 `rviz_common::Tool` named `awsim_rviz_plugins/NpsSpawner` is implemented.
-`awsim_rviz_plugins/NpsSpawner` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugin/npc_spawner/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
+`awsim_rviz_plugins/NpsSpawner` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugins/npc_spawner/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
 
 AWSIM subscribes this topic and spawn NPC on the coordinates.
 
 `rviz_common::Display` named `awsim_rviz_plugins/NpsSpawnerStatus` is implemented.
-`awsim_rviz_plugins/NpsSpawnerStatus` is entered Npc type (drop down list) and velocity, and publishes those as a `/awsim/awsim_rviz_plugin/npc_spawner/npc_name` and `/awsim/awsim_rviz_plugin/npc_spawner/npc_velocity` topic.
+`awsim_rviz_plugins/NpsSpawnerStatus` is entered Npc type (drop down list) and velocity, and publishes those as a `/awsim/awsim_rviz_plugins/npc_spawner/npc_name` and `/awsim/awsim_rviz_plugins/npc_spawner/npc_velocity` topic.
 
 AWSIM subscribes those topics and specify type and velocity of spawned NPC.
 

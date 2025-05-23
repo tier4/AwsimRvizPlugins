@@ -23,7 +23,7 @@ AWSIM subscribes this topic and updates the coordinates of the EGO.
 If `Autoware (pilot-auto)` is running with, press the `Initialize with GNSS` button to perform localilization again.
 
 ### NpsSpawner
-Spawn AWSIM Npc from Rviz GUI tool.
+Spawn AWSIM Npc using Rviz GUI tool.
 Type and velocity of spawned Npc is specified from Rviz display.
 
 `rviz_common::Tool` named `awsim_rviz_plugins/NpsSpawner` is implemented.

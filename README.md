@@ -3,7 +3,7 @@ Rviz plugins for operating AWSIM environment.
 
 The following features are implemented:
 - 2D Pose Teleport: Teleport AWSIM EGO using Rviz GUI tool
-- NpcSpawner: Spawn AWSIM Npc from Rviz GUI tool
+- NpcSpawner: Spawn AWSIM Npc using Rviz GUI tool
 
 ## Features
 

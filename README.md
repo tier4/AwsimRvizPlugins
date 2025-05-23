@@ -3,7 +3,7 @@ Rviz plugins for operating AWSIM environment.
 
 The following features are implemented:
 - 2D Pose Teleport: Teleport AWSIM EGO using Rviz GUI tool
-- NpcSpawner: Spawn AWSIM Npc using Rviz GUI tool
+- Npc Spawner: Spawn AWSIM Npc using Rviz GUI tool
 
 ## Features
 
@@ -22,7 +22,7 @@ AWSIM subscribes this topic and updates the coordinates of the EGO.
 
 If `Autoware (pilot-auto)` is running with, press the `Initialize with GNSS` button to perform localilization again.
 
-### NpsSpawner
+### Nps Spawner
 Spawn AWSIM Npc using Rviz GUI tool.
 Type and velocity of spawned Npc is specified from Rviz display.
 

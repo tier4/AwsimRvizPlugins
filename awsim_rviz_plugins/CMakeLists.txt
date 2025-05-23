@@ -17,7 +17,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 
 set(awsim_rviz_plugins_headers_to_moc
-  include/ego_placement/ego_placement.hpp
+  include/2d_pose_teleport/2d_pose_teleport.hpp
   include/npc_spawner/npc_spawner.hpp
   include/npc_spawner/npc_spawner_status.hpp
 )
@@ -27,7 +27,7 @@ foreach(header "${awsim_rviz_plugins_headers_to_moc}")
 endforeach()
 
 set(awsim_rviz_plugins_source_files
-  src/ego_placement/ego_placement.cpp
+  src/2d_pose_teleport/2d_pose_teleport.cpp
   src/npc_spawner/npc_spawner.cpp
   src/npc_spawner/npc_spawner_status.cpp
 )

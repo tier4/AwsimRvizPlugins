@@ -16,7 +16,7 @@ AWSIM subscribes this topic and updates the coordinates of the EGO.
 
 #### How to use
 1. Click the plus button on the toolbar and select `awsim_rviz_plugins/2dPoseTeleport` from the list.
-2. Click on `2D Pose Teleportt` button from the toolbar and select it.
+2. Click on `2D Pose Teleport` button from the toolbar and select it.
 3. On the map displayed in Rviz, drag the cursor to the location and orientation where you want to move the EGO.
 
 If `Autoware (pilot-auto)` is running with, press the `Initialize with GNSS` button to perform localilization again.

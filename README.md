@@ -2,11 +2,11 @@
 Rviz plugins for operating AWSIM environment.
 
 The following features are implemented:
-- 2dPoseTeleport: Teleport AWSIM EGO using Rviz GUI tool
+- 2D Pose Teleport: Teleport AWSIM EGO using Rviz GUI tool
 
 ## Features
 
-### 2DPoseTeleport
+### 2D Pose Teleport
 Teleport AWSIM EGO using Rviz GUI tool.
 
 `rviz_common::Tool` named `awsim_rviz_plugins/2dPoseTeleport` is implemented.

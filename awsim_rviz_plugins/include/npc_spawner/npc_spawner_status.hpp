@@ -71,6 +71,7 @@ private:
 
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_name;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr publisher_velo;
+  rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_names;
   rclcpp::Clock::SharedPtr clock_;
 };
 }  // namespace awsim_rviz_plugins

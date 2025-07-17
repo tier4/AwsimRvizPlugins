@@ -41,14 +41,7 @@ NpcSpawnerStatus::NpcSpawnerStatus() : rviz_ros_node_(), qos_profile(5)
   qos_profile_property_velo = new rviz_common::properties::QosProfileProperty(topic_property_velo, qos_profile);
 
   type_property_ = new rviz_common::properties::EditableEnumProperty(
-    "NPC Type", "Hatchback", "Type of NPC which spawn to AWSIM.", this, SLOT(updateName()));
-  type_property_->addOption("Hatchback");
-  type_property_->addOption("SmallCar");
-  type_property_->addOption("Taxi");
-  type_property_->addOption("Truck_2t");
-  type_property_->addOption("Van");
-  type_property_->addOption("humanCasual");
-  type_property_->addOption("humanElegant");
+    "NPC Type", "", "Type of NPC which spawn to AWSIM.", this, SLOT(updateName()));
 
   velocity_property_ = new rviz_common::properties::FloatProperty(
     "Velocity [km/h]", 10, "Velocity of NPC which spawn to AWSIM.",
@@ -62,6 +55,17 @@ void NpcSpawnerStatus::onInitialize()
   topic_property_velo->initialize(rviz_ros_node_);
   updateNameTopic();
   updateVelocityTopic();
+
+  subscription_names = context_->getRosNodeAbstraction().lock()->get_raw_node()->create_subscription<std_msgs::msg::String>("/awsim/awsim_rviz_plugins/npc_spawner/npc_name_list", qos_profile.transient_local(),
+  [this](std_msgs::msg::String msg) {
+    type_property_->clearOptions();
+
+    std::stringstream stream{msg.data};
+    std::string npc_name;
+    while (getline(stream, npc_name, ',')) {
+      type_property_->addOption(npc_name.c_str());
+    }
+  });
 }
 
 void NpcSpawnerStatus::reset() {};

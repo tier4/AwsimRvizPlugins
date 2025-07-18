@@ -55,7 +55,7 @@ void NpcSpawner::onInitialize()
   PoseTool::onInitialize();
   qos_profile_property_->initialize(
     [this](rclcpp::QoS profile) {this->qos_profile_ = profile;});
-  setName("AWSIM NPC Placement");
+  setName("NPC Spawner");
   updateTopic();
 }
 

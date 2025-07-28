@@ -63,6 +63,9 @@ void NpcSpawnerStatus::onInitialize()
     std::stringstream stream{msg.data};
     std::string npc_name;
     while (getline(stream, npc_name, ',')) {
+      if (type_property_->getStdString() == "")
+        type_property_->setStdString(npc_name.c_str());
+
       type_property_->addOption(npc_name.c_str());
     }
   });

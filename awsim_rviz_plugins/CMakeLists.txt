@@ -18,6 +18,8 @@ find_package(rclcpp REQUIRED)
 
 set(awsim_rviz_plugins_headers_to_moc
   include/2d_pose_teleport/2d_pose_teleport.hpp
+  include/npc_spawner/npc_spawner.hpp
+  include/npc_spawner/npc_spawner_status.hpp
 )
 
 foreach(header "${awsim_rviz_plugins_headers_to_moc}")
@@ -26,6 +28,8 @@ endforeach()
 
 set(awsim_rviz_plugins_source_files
   src/2d_pose_teleport/2d_pose_teleport.cpp
+  src/npc_spawner/npc_spawner.cpp
+  src/npc_spawner/npc_spawner_status.cpp
 )
 
 add_library(awsim_rviz_plugins SHARED

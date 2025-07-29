@@ -8,4 +8,26 @@
       Teleport AWSIM EGO using Rviz GUI tool.
     </description>
   </class>
+
+  <class
+    name="awsim_rviz_plugins/NpcSpawner"
+    type="awsim_rviz_plugins::NpcSpawner"
+    base_class_type="rviz_common::Tool"
+  >
+    <description>
+      Spawn AWSIM NPC from Rviz tool.
+    </description>
+  </class>
+
+  <class
+    name="awsim_rviz_plugins/NpcSpawnerStatus"
+    type="awsim_rviz_plugins::NpcSpawnerStatus"
+    base_class_type="rviz_common::Display"
+  >
+    <description>
+      Modify NPC status which is spawned from `awsim_rviz_plugins/NpcSpawner`.
+    </description>
+    <message_type>std_msgs/msg/String</message_type>
+    <message_type>std_msgs/msg/Float32</message_type>
+  </class>
 </library>

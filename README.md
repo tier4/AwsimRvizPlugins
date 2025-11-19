@@ -2,13 +2,14 @@
 Rviz plugins for operating AWSIM environment.
 
 The following features are implemented:
-- 2D Pose Teleport: Teleport AWSIM EGO using Rviz GUI tool
-- Npc Spawner: Spawn AWSIM Npc using Rviz GUI tool
+- [2D Pose Teleport](#2d-pose-teleport): Teleport AWSIM EGO using Rviz GUI tool
+- [Npc Spawner](#nps-spawner): Spawn AWSIM Npc using Rviz GUI tool
 
 ## Features
 
 ### 2D Pose Teleport
 Teleport AWSIM EGO using Rviz GUI tool.
+![2D Pose Teleport](./imgs/2d_pose_teleport/2d_pose_teleport.png)
 
 `rviz_common::Tool` named `awsim_rviz_plugins/2dPoseTeleport` is implemented.
 `awsim_rviz_plugins/2dPoseTeleport` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugins/pose_teleport/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
@@ -17,6 +18,9 @@ AWSIM subscribes this topic and updates the coordinates of the EGO.
 
 #### How to use
 1. Click the plus button on the toolbar and select `awsim_rviz_plugins/2dPoseTeleport` from the list.
+
+![Tool Bar](./imgs/2d_pose_teleport/tool_bar.png)
+
 2. Click on `2D Pose Teleport` button from the toolbar and select it.
 3. On the map displayed in Rviz, drag the cursor to the location and orientation where you want to move the EGO.
 
@@ -25,6 +29,7 @@ If `Autoware (pilot-auto)` is running with, press the `Initialize with GNSS` but
 ### Nps Spawner
 Spawn AWSIM Npc using Rviz GUI tool.
 Type and velocity of spawned Npc is specified from Rviz display.
+![Npc Spawner](./imgs/npc_spawner/npc_spawner.png)
 
 `rviz_common::Tool` named `awsim_rviz_plugins/NpsSpawner` is implemented.
 `awsim_rviz_plugins/NpsSpawner` gets position and orientation by dragging on the map displayed in Rviz, and publishes those as a `/awsim/awsim_rviz_plugins/npc_spawner/pose_with_covariance` topic (as `geometry_msgs::msg::PoseWithCovarianceStamped`).
@@ -40,11 +45,17 @@ Drop down list of Npc type in `awsim_rviz_plugins/NpsSpawnerStatus` is updated b
 
 #### How to use
 1. Click the plus button on the toolbar and select `awsim_rviz_plugins/NpcSpawner` from the list.
+
+![Tool Bar](./imgs/npc_spawner/tool_bar.png)
+
 2. Click on `Npc Spawner` button from the toolbar and select it.
 3. On the map displayed in Rviz, drag the cursor to the location and orientation where you want to move the EGO.
 
 If you want to change type and velocity of spawned Npc, do the following:
 1. Click the `Add` button on the `Display` panel and select `awsim_rviz_plugins/NpcSpawnerStatus` from the list.
+
+![Status Panel](./imgs/npc_spawner/status_panel.png)
+
 2. Change the value of `Npc Type` and `Velocity [km/h]`.
 
 
